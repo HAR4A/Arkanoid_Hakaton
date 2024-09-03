@@ -13,7 +13,7 @@ public class PaddleMovementController : IPaddleMovementController
         _screenBoundsProvider = boundsProvider;
         this._speed = speed;
 
-        // Используем ширину в мировых координатах
+        //ширина в мировых координатах
         _halfPaddleWidth = transform.GetComponent<Renderer>().bounds.size.x / 2;
     }
 
@@ -21,7 +21,7 @@ public class PaddleMovementController : IPaddleMovementController
     {
         float newPositionX = _paddleTransform.position.x + direction * _speed * deltaTime;
 
-        // Ограничение движения с учетом реальной ширины платформы и границ экрана
+        //ограничение движения с учетом реальной ширины платформы и границ экрана
         float clampedX = Mathf.Clamp(newPositionX, _screenBoundsProvider.GetLeftBoundary() + _halfPaddleWidth, _screenBoundsProvider.GetRightBoundary() - _halfPaddleWidth);
       
         _paddleTransform.position = new Vector3(clampedX, _paddleTransform.position.y, _paddleTransform.position.z);
