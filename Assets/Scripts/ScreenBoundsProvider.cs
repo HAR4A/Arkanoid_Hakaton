@@ -1,7 +1,9 @@
 using UnityEngine;
 
+
 public class ScreenBoundsProvider : IScreenBoundsProvider
 {
+    
     private Camera _mainCamera;
 
     public ScreenBoundsProvider(Camera camera)
