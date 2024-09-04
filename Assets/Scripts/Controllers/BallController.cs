@@ -19,4 +19,13 @@ public class BallController : MonoBehaviour
         
         this.rigidbody.AddForce(_force.normalized * this._speed);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        IBrick brick = collision.gameObject.GetComponent<IBrick>();
+        if (brick != null)
+        {
+            brick.OnHit();
+        }  
+    }
 }
