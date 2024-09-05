@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Brick : MonoBehaviour, IBrick
+public class BrickController : MonoBehaviour, IBrick
 {
     protected int health = 1;
 
