@@ -36,6 +36,17 @@ public class GameManager : MonoBehaviour
         
         UIManager.Instance.ShowLosePanel();
     }
+    
+    public void HandleWinCondition()
+    {
+        // Останавливаем мяч и ракетку
+        BallController.Instance.LockBall();
+        PaddleController.Instance.LockPaddle();
+
+        // Показываем панель победы через UIManager
+        UIManager.Instance.ShowWinPanel();
+    }
+    
 
     public bool IsEditMode() => _isEditMode;
 }

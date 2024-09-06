@@ -6,7 +6,8 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private GameObject[] gameplayUIElements;
     [SerializeField] private GameObject[] editModeUIElements;
-    [SerializeField] private GameObject losePanel; 
+    [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject winPanel;
 
     private void Awake()
     {
@@ -38,13 +39,21 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void HideLosePanel()
+    public void ShowWinPanel()
+    {
+        if (winPanel != null)
+        {
+            winPanel.SetActive(true);
+        }
+    }
+    
+    /*public void HideLosePanel()
     {
         if (losePanel != null)
         {
             losePanel.SetActive(false);
         }
-    }
+    }*/
 
     
     private void SetActiveForUIElements(GameObject[] uiElements, bool isActive)

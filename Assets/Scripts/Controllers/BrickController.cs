@@ -7,6 +7,7 @@ public class BrickController : MonoBehaviour, IBrick
     public virtual void OnHit()
     {
         health--;
+        
         if (health <= 0)
         {
             DestroyBrick();
