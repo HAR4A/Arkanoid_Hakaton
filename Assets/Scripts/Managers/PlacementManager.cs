@@ -20,7 +20,19 @@ public class PlacementManager : MonoBehaviour
             {
                 PlacePrefab();
             }
+
+            else if (Input.GetMouseButtonUp(1))
+            {
+                Destroy(_currentInstance);
+            }
+
+            else if (Input.mouseScrollDelta.y != 0)
+            {
+                _currentInstance.transform.Rotate(0, 0, Input.mouseScrollDelta.y * 10f);
+            }
         }
+        
+        
     }
 
     public void StartPlacingPrefab(GameObject prefabToPlace)
