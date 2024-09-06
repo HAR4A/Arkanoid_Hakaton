@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class WallsController : MonoBehaviour
 {
-    [SerializeField] private float _bottomOffset = 1f; //смещение нижней стены
-    [SerializeField] private float _extraLength = 1f; //смещение вних боковых стен
+    [SerializeField] private float _bottomOffset = 1f; // смещение нижней стены
+    [SerializeField] private float _extraLength = 1f; // смещение нижних боковых стен
     private Camera _mainCamera;
 
-    private BoxCollider2D leftWall, rightWall, topWall, bottomWall;
+    private BoxCollider2D leftWall, rightWall, topWall, bottomWall, bottomTriggerWall;
 
     private void Start()
     {
@@ -16,6 +16,7 @@ public class WallsController : MonoBehaviour
         rightWall = transform.Find("RightWall").GetComponent<BoxCollider2D>();
         topWall = transform.Find("TopWall").GetComponent<BoxCollider2D>();
         bottomWall = transform.Find("BottomWall").GetComponent<BoxCollider2D>();
+        bottomTriggerWall = transform.Find("BottomTriggerWall").GetComponent<BoxCollider2D>();
         
         UpdateWalls();
     }
@@ -32,20 +33,24 @@ public class WallsController : MonoBehaviour
         
         float _wallThickness = 1f; 
 
-        //левая стена
+        // левая стена
         leftWall.size = new Vector2(_wallThickness, _camHeight + 2 * _extraLength);
         leftWall.offset = new Vector2(-_camWidth / 2f - _wallThickness / 2f, -_extraLength);
 
-        //правая стена
+        // правая стена
         rightWall.size = new Vector2(_wallThickness, _camHeight + 2 * _extraLength);
         rightWall.offset = new Vector2(_camWidth / 2f + _wallThickness / 2f, -_extraLength);
 
-        //верхняя стена
+        // верхняя стена
         topWall.size = new Vector2(_camWidth, _wallThickness);
         topWall.offset = new Vector2(0f, _camHeight / 2f + _wallThickness / 2f);
 
-        //нижняя стена
+        // нижняя стена
         bottomWall.size = new Vector2(_camWidth, _wallThickness);
         bottomWall.offset = new Vector2(0f, -_camHeight / 2f - _wallThickness / 2f - _bottomOffset);
+
+        // дополнительная нижняя стена (триггер)
+        bottomTriggerWall.size = new Vector2(_camWidth, _wallThickness);
+        bottomTriggerWall.offset = new Vector2(0f, -_camHeight / 2f - _wallThickness / 2f - _bottomOffset/* - _wallThickness*/); // Немного ниже основной нижней стены
     }
 }
