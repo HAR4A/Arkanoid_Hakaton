@@ -8,6 +8,7 @@ public class BallController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _livesText;
     [SerializeField] private TextMeshProUGUI _scoreText;
     public new Rigidbody2D rigidbody { get; private set; }
+    
     private float _speed = 500f;
     private int _lives = 3;
     private int _score;
@@ -37,7 +38,7 @@ public class BallController : MonoBehaviour
 
             if (_lives <= 0)
             {
-                Debug.Log("Game Over! Lives are 0.");
+                GameManager.Instance.GameOver();
                
             }
         }
@@ -90,3 +91,6 @@ public class BallController : MonoBehaviour
         this.rigidbody.AddForce(_force.normalized * this._speed);
     }
 }
+
+
+

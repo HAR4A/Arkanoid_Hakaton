@@ -27,5 +27,15 @@ public class GameManager : MonoBehaviour
         PaddleController.Instance.UnlockPaddle();
     }
 
+    
+    public void GameOver()
+    {
+       
+        BallController.Instance.LockBall();
+        PaddleController.Instance.LockPaddle();
+        
+        UIManager.Instance.ShowLosePanel();
+    }
+
     public bool IsEditMode() => _isEditMode;
 }

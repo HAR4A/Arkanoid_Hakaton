@@ -6,8 +6,8 @@ public class GameControl : MonoBehaviour
 {
     public static GameControl Instance { get; private set; }
 
-    [SerializeField] private Button pauseButton; // Кнопка паузы
-    [SerializeField] private Button resumeButton; // Кнопка возобновления игры
+    [SerializeField] private Button pauseButton; 
+    [SerializeField] private Button resumeButton;
 
     private bool _isPaused = false;
 
@@ -33,33 +33,38 @@ public class GameControl : MonoBehaviour
             ResumeGame();
         }
     }
-
-    // Метод для полной остановки мяча и ракетки
+    
     private void PauseGame()
     {
-        Time.timeScale = 0f;  // Останавливаем время в игре
-        BallController.Instance.rigidbody.simulated = false;  // Отключаем физику мяча
-        PaddleController.Instance.enabled = false;  // Отключаем управление ракеткой
+        Time.timeScale = 0f;  
+        BallController.Instance.rigidbody.simulated = false; 
+        PaddleController.Instance.enabled = false;  
         
-        pauseButton.gameObject.SetActive(false);  // Скрываем кнопку паузы
-        resumeButton.gameObject.SetActive(true);  // Показываем кнопку возобновления
+        pauseButton.gameObject.SetActive(false);  
+        resumeButton.gameObject.SetActive(true);  
     }
 
-    // Метод для возобновления игры
+    
     public void ResumeGame()
     {
-        Time.timeScale = 1f;  // Возвращаем нормальную скорость игры
-        BallController.Instance.rigidbody.simulated = true;  // Включаем физику мяча
-        PaddleController.Instance.enabled = true;  // Включаем управление ракеткой
+        Time.timeScale = 1f;  
+        BallController.Instance.rigidbody.simulated = true;  
+        PaddleController.Instance.enabled = true; 
         
-        pauseButton.gameObject.SetActive(true);   // Показываем кнопку паузы
-        resumeButton.gameObject.SetActive(false);  // Скрываем кнопку возобновления
+        pauseButton.gameObject.SetActive(true);   
+        resumeButton.gameObject.SetActive(false); 
     }
 
-    // Метод для перезапуска текущей сцены
-    public void RestartGame()
+    
+    public void RestartGame() 
     {
-        Time.timeScale = 1f;  // На всякий случай сбрасываем скорость игры на нормальную
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  // Перезагружаем текущую сцену
+        Time.timeScale = 1f;  
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+    }
+    
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f;  
+        SceneManager.LoadScene(2); 
     }
 }
