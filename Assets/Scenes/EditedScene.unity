@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &85342787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,12 +248,12 @@ RectTransform:
   m_LocalScale: {x: 0.9998999, y: 0.9998999, z: 0.9998999}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 738957411}
+  m_Father: {fileID: 1981628265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5183307, y: 0.23577233}
   m_AnchorMax: {x: 0.8725458, y: 0.83877236}
-  m_AnchoredPosition: {x: 0.17451477, y: 0.13986969}
-  m_SizeDelta: {x: 0.116363525, y: -0.23175049}
+  m_AnchoredPosition: {x: -1145.792, y: 389.91168}
+  m_SizeDelta: {x: -583.5698, y: -508.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &101802130
 GameObject:
@@ -1878,7 +1878,6 @@ RectTransform:
   m_Children:
   - {fileID: 221426416}
   - {fileID: 954246858}
-  - {fileID: 85342790}
   m_Father: {fileID: 1981628265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8505002}
@@ -5298,6 +5297,7 @@ RectTransform:
   - {fileID: 937431021}
   - {fileID: 1373210544}
   - {fileID: 738957411}
+  - {fileID: 85342790}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5791,7 +5791,7 @@ PrefabInstance:
     - target: {fileID: 4460444074036872466, guid: e7372e08e3b567846b96deaccc9712e1, type: 3}
       propertyPath: gameplayUIElements.Array.data[2]
       value: 
-      objectReference: {fileID: 1743385365}
+      objectReference: {fileID: 85342786}
     - target: {fileID: 4460444074036872466, guid: e7372e08e3b567846b96deaccc9712e1, type: 3}
       propertyPath: gameplayUIElements.Array.data[3]
       value: 
