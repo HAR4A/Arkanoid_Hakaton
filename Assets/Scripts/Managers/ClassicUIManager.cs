@@ -29,7 +29,6 @@ public class ClassicUIManager : MonoBehaviour
     }
     
     
-    
     public void ShowWinPanel()
     {
         winPanel.SetActive(true);

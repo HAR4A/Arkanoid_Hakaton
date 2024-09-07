@@ -59,7 +59,9 @@ public class BallController : MonoBehaviour
                 }
                 else if (currentScene.buildIndex == 1)
                 {
-                   ClassicUIManager.Instance.ShowLosePanel(); /* logic for lose classic*/
+                    LockBall();
+                    PaddleController.Instance.LockPaddle();
+                    ClassicUIManager.Instance.ShowLosePanel(); /* logic for lose classic*/
                 }
             }
         }
