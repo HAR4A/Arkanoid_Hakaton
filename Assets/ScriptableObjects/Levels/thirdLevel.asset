@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: thirdLevel
   m_EditorClassIdentifier: 
   brickPrefab: {fileID: 6040306092891411833, guid: 9c11ccd62065db045a392f9d5423eea3, type: 3}
-  levelName: 3
+  levelNumber: 3
+  brickPositions:
+  - {x: 0, y: -2}
