@@ -60,18 +60,9 @@ public class UIManager : MonoBehaviour
     {
         if (errorPanel != null)
         {
-            errorPanel.SetActive(false); // Скрываем панель ошибки
+            errorPanel.SetActive(false);
         }
     }
-    
-    /*public void HideLosePanel()
-    {
-        if (losePanel != null)
-        {
-            losePanel.SetActive(false);
-        }
-    }*/
-
     
     private void SetActiveForUIElements(GameObject[] uiElements, bool isActive)
     {

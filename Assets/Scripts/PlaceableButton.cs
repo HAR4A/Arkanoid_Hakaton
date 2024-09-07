@@ -9,7 +9,6 @@ public class PlaceableButton : MonoBehaviour
     private void Start()
     {
         placementManager = FindObjectOfType<PlacementManager>();
-        
         GetComponent<Button>().onClick.AddListener(OnButtonClick);
     }
 

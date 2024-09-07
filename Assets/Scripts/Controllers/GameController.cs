@@ -21,8 +21,7 @@ public class GameController : MonoBehaviour
             Instance = this;
         }
     }
-
-    // Метод для паузы игры
+    
     public void TogglePause()
     {
         _isPaused = !_isPaused;
@@ -44,32 +43,22 @@ public class GameController : MonoBehaviour
             if (brickManager.AreBricksPresent()) // проверка наличия кирпичиков
             {
                 GameManager.Instance.StartGame();
-                brickManager.CheckForBricksContinuously(); // начинаем поиск кирпичиков
+                brickManager.CheckForBricksContinuously();
             }
             else
             {
                 StartCoroutine(ShowErrorPanelForDuration(2f)); 
             }
         }
-        
-        
-        /*GameManager.Instance.StartGame();
-        
-        if (brickManager != null)
-        {
-            brickManager.CheckForBricksContinuously();
-        }
-        else 
-        {
-           
-        }*/
     }
+    
     private IEnumerator ShowErrorPanelForDuration(float duration)
     {
-        UIManager.Instance.ShowErrorPanel(); // Показываем панель ошибки
-        yield return new WaitForSeconds(duration); // Ждём указанное количество секунд
-        UIManager.Instance.HideErrorPanel(); // Скрываем панель ошибки
+        UIManager.Instance.ShowErrorPanel();
+        yield return new WaitForSeconds(duration); 
+        UIManager.Instance.HideErrorPanel();
     }
+    
     private void PauseGame()
     {
         Time.timeScale = 0f;  
@@ -79,7 +68,6 @@ public class GameController : MonoBehaviour
         pauseButton.gameObject.SetActive(false);  
         resumeButton.gameObject.SetActive(true);  
     }
-
     
     public void ResumeGame()
     {
@@ -90,7 +78,6 @@ public class GameController : MonoBehaviour
         pauseButton.gameObject.SetActive(true);   
         resumeButton.gameObject.SetActive(false); 
     }
-
     
     public void RestartGame() 
     {

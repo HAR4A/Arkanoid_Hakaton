@@ -31,8 +31,6 @@ public class PlacementManager : MonoBehaviour
                 _currentInstance.transform.Rotate(0, 0, Input.mouseScrollDelta.y * 10f);
             }
         }
-        
-        
     }
 
     public void StartPlacingPrefab(GameObject prefabToPlace)
@@ -50,7 +48,7 @@ public class PlacementManager : MonoBehaviour
 
         Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(mousePosition);
 
-        // границы префаба
+        //границы префаба
         Bounds prefabBounds = GetPrefabBounds(_currentInstance);
 
         //границы экрана
@@ -59,31 +57,30 @@ public class PlacementManager : MonoBehaviour
         float topBoundary = _mainCamera.ViewportToWorldPoint(new Vector3(0, 1, _mainCamera.transform.position.z)).y;
         float bottomBoundary = _mainCamera.ViewportToWorldPoint(new Vector3(0, 0, _mainCamera.transform.position.z)).y;
 
-        // Ограничиваем положение префаба
+        //ограничение положения префаба
         float clampedX = Mathf.Clamp(worldPosition.x, leftBoundary + prefabBounds.extents.x, rightBoundary - prefabBounds.extents.x);
         float clampedY = Mathf.Clamp(worldPosition.y, bottomBoundary + prefabBounds.extents.y, topBoundary - prefabBounds.extents.y);
 
         _currentInstance.transform.position = new Vector3(clampedX, clampedY, worldPosition.z);
     }
-
     
     private Bounds GetPrefabBounds(GameObject prefab)
-{
-    Bounds bounds = new Bounds(prefab.transform.position, Vector3.zero);
-    
-    //проверка дочерних
-    foreach (var renderer in prefab.GetComponentsInChildren<Renderer>())
     {
-        bounds.Encapsulate(renderer.bounds);
-    }
+        Bounds bounds = new Bounds(prefab.transform.position, Vector3.zero);
+    
+        //проверка дочерних
+        foreach (var renderer in prefab.GetComponentsInChildren<Renderer>())
+        {
+             bounds.Encapsulate(renderer.bounds);
+        }
 
-    foreach (var collider in prefab.GetComponentsInChildren<Collider2D>())
-    {
-        bounds.Encapsulate(collider.bounds);
-    }
+        foreach (var collider in prefab.GetComponentsInChildren<Collider2D>())
+        {
+          bounds.Encapsulate(collider.bounds);
+        }
     
-    return bounds;
-}
+        return bounds;
+    }
     private void PlacePrefab()
     {
         _currentInstance = null;

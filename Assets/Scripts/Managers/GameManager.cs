@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
         BallController.Instance.UnlockBall();
         PaddleController.Instance.UnlockPaddle();
     }
-
     
     public void GameOver()
     {
@@ -46,14 +45,11 @@ public class GameManager : MonoBehaviour
     
     public void HandleWinCondition()
     {
-        // Останавливаем мяч и ракетку
         BallController.Instance.LockBall();
         PaddleController.Instance.LockPaddle();
-
-        // Показываем панель победы через UIManager
+        
         UIManager.Instance.ShowWinPanel();
     }
     
-
     public bool IsEditMode() => _isEditMode;
 }

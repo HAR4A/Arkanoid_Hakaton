@@ -9,7 +9,7 @@ public class BallController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreText;
     public new Rigidbody2D rigidbody { get; private set; }
     
-    private float _speed = 500f;
+    private float _speed = 600f;
     private int _lives = 3;
     private int _score;
     private bool _isLocked = true;
