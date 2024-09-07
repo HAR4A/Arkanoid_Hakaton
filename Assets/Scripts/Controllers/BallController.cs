@@ -110,8 +110,11 @@ public class BallController : MonoBehaviour
 
         this.transform.position = new Vector3(0f, -4.14f, 0f);
         
+        this.rigidbody.velocity = Vector2.zero;
+    
         _isLocked = false;
         this.rigidbody.simulated = true;
+        
         Vector2 _force = new Vector2(Random.Range(-1f, 1f), -1f);
         this.rigidbody.AddForce(_force.normalized * this._speed);
     }
