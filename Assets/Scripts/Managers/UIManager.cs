@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject[] editModeUIElements;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject errorPanel;
 
     private void Awake()
     {
@@ -44,6 +45,22 @@ public class UIManager : MonoBehaviour
         if (winPanel != null)
         {
             winPanel.SetActive(true);
+        }
+    }
+    
+    public void ShowErrorPanel()
+    {
+        if (errorPanel != null)
+        {
+            errorPanel.SetActive(true);
+        }
+    }
+    
+    public void HideErrorPanel()
+    {
+        if (errorPanel != null)
+        {
+            errorPanel.SetActive(false); // Скрываем панель ошибки
         }
     }
     

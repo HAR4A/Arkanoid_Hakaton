@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
-public class GameControl : MonoBehaviour
+public class GameController : MonoBehaviour
 {
-    public static GameControl Instance { get; private set; }
+    public static GameController Instance { get; private set; }
 
     [SerializeField] private Button pauseButton; 
     [SerializeField] private Button resumeButton;
+    [SerializeField] private Button startButton;
 
+    [SerializeField] private BrickManager brickManager;
     private bool _isPaused = false;
 
     private void Awake()
@@ -33,7 +36,40 @@ public class GameControl : MonoBehaviour
             ResumeGame();
         }
     }
-    
+
+    public void StartGame()
+    {
+        if (brickManager != null)
+        {
+            if (brickManager.AreBricksPresent()) // проверка наличия кирпичиков
+            {
+                GameManager.Instance.StartGame();
+                brickManager.CheckForBricksContinuously(); // начинаем поиск кирпичиков
+            }
+            else
+            {
+                StartCoroutine(ShowErrorPanelForDuration(2f)); 
+            }
+        }
+        
+        
+        /*GameManager.Instance.StartGame();
+        
+        if (brickManager != null)
+        {
+            brickManager.CheckForBricksContinuously();
+        }
+        else 
+        {
+           
+        }*/
+    }
+    private IEnumerator ShowErrorPanelForDuration(float duration)
+    {
+        UIManager.Instance.ShowErrorPanel(); // Показываем панель ошибки
+        yield return new WaitForSeconds(duration); // Ждём указанное количество секунд
+        UIManager.Instance.HideErrorPanel(); // Скрываем панель ошибки
+    }
     private void PauseGame()
     {
         Time.timeScale = 0f;  
