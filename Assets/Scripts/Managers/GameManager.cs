@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     
     public void GameOver()
     {
-       
         BallController.Instance.LockBall();
         PaddleController.Instance.LockPaddle();
         

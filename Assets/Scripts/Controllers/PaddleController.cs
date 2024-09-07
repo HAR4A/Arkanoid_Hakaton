@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PaddleController : MonoBehaviour
 {
     public static PaddleController Instance { get; private set; }
@@ -15,14 +15,25 @@ public class PaddleController : MonoBehaviour
         {
             Instance = this;
         }
-        
+  
         IScreenBoundsProvider boundsProvider = new ScreenBoundsProvider(Camera.main);
         _movementController = new PaddleMovementController(transform, boundsProvider, _speed);
+        
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex == 0)
+        {
+            _isLocked = true; 
+        }
+        else if (currentScene.buildIndex == 1)
+        {
+            _isLocked = false; 
+        }
     }
 
     private void Update()
     {
         if (_isLocked) return;
+        
         
         float input = Input.GetAxis("Horizontal");
         _movementController.Move(input, Time.deltaTime);

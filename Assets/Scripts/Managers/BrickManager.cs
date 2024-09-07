@@ -1,7 +1,21 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class BrickManager : MonoBehaviour
 {
+    public static BrickManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private bool _isSearching = false;
     
     public void CheckForBricksContinuously()
@@ -27,17 +41,36 @@ public class BrickManager : MonoBehaviour
     
     private void CheckForBricks()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        
         BrickController[] bricks = FindObjectsOfType<BrickController>();
 
         if (bricks.Length == 0)
-        {
-            GameManager.Instance.HandleWinCondition(); 
+        {   
+            if (currentScene.buildIndex == 1)
+            {
+                ClassicGameManager.Instance.HandleWinCondition();
+            }
+            
+            else if (currentScene.buildIndex == 0)
+            {
+                GameManager.Instance.HandleWinCondition(); 
+            }
         }
-        
     }
 
     public void StopBrickSearch()
     {
         _isSearching = false;
+    }
+    
+    
+    
+    public void ClearBricks()
+    {
+        foreach (var brick in FindObjectsOfType<BrickController>())
+        {
+            Destroy(brick.gameObject);
+        }
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
@@ -25,12 +26,26 @@ public class BallController : MonoBehaviour
 
     private void Start()
     {
-        LockBall();
-        UpdateLivesText(); 
+        UpdateLivesText();  
+        
+        Scene currentScene = SceneManager.GetActiveScene();
+        
+        if (currentScene.buildIndex == 1)
+        {
+            UnlockBall();
+        }
+        else if (currentScene.buildIndex == 0)
+        {
+            LockBall();
+        }
+        
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        
         if (other.TryGetComponent<DeathZone>(out var deathZone))
         {
             _lives--;  
@@ -38,8 +53,14 @@ public class BallController : MonoBehaviour
 
             if (_lives <= 0)
             {
-                GameManager.Instance.GameOver();
-               
+                if (currentScene.buildIndex == 0)
+                {
+                    GameManager.Instance.GameOver();
+                }
+                else if (currentScene.buildIndex == 1)
+                {
+                   ClassicUIManager.Instance.ShowLosePanel(); /* logic for lose classic*/
+                }
             }
         }
     }
