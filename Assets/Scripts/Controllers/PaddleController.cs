@@ -46,6 +46,7 @@ public class PaddleController : MonoBehaviour
     
     public void UnlockPaddle()
     {
+        this.transform.position = new Vector3(0f, -5.15f, 0f);
         _isLocked = false;
     }
 }

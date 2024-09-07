@@ -28,6 +28,10 @@ public class ClassicGameManager : MonoBehaviour
         ClassicUIManager.Instance.ShowWinPanel();
     }
     
+    public int GetCurrentLevelIndex()
+    {
+        return currentLevelIndex;
+    }
     
     public void Start()
     {
