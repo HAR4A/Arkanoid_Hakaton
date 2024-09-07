@@ -47,12 +47,12 @@ public class BrickManager : MonoBehaviour
 
         if (bricks.Length == 0)
         {   
-            if (currentScene.buildIndex == 1)
+            if (currentScene.buildIndex == 2)
             {
                 ClassicGameManager.Instance.HandleWinCondition();
             }
             
-            else if (currentScene.buildIndex == 0)
+            else if (currentScene.buildIndex == 1)
             {
                 GameManager.Instance.HandleWinCondition(); 
             }
@@ -63,8 +63,6 @@ public class BrickManager : MonoBehaviour
     {
         _isSearching = false;
     }
-    
-    
     
     public void ClearBricks()
     {

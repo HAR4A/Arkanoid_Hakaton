@@ -20,11 +20,11 @@ public class PaddleController : MonoBehaviour
         _movementController = new PaddleMovementController(transform, boundsProvider, _speed);
         
         Scene currentScene = SceneManager.GetActiveScene();
-        if (currentScene.buildIndex == 0)
+        if (currentScene.buildIndex == 1)
         {
             _isLocked = true; 
         }
-        else if (currentScene.buildIndex == 1)
+        else if (currentScene.buildIndex == 2)
         {
             _isLocked = false; 
         }

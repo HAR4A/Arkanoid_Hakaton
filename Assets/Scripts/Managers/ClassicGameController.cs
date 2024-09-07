@@ -72,6 +72,6 @@ public class ClassicGameController : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
     }
 }

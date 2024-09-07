@@ -30,11 +30,11 @@ public class BallController : MonoBehaviour
         
         Scene currentScene = SceneManager.GetActiveScene();
         
-        if (currentScene.buildIndex == 1)
+        if (currentScene.buildIndex == 2)
         {
             UnlockBall();
         }
-        else if (currentScene.buildIndex == 0)
+        else if (currentScene.buildIndex == 1)
         {
             LockBall();
         }
@@ -53,11 +53,11 @@ public class BallController : MonoBehaviour
 
             if (_lives <= 0)
             {
-                if (currentScene.buildIndex == 0)
+                if (currentScene.buildIndex == 1)
                 {
                     GameManager.Instance.GameOver();
                 }
-                else if (currentScene.buildIndex == 1)
+                else if (currentScene.buildIndex == 2)
                 {
                     LockBall();
                     PaddleController.Instance.LockPaddle();
