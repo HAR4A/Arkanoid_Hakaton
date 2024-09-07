@@ -21,19 +21,16 @@ public class ClassicUIManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     
     public void UpdateLevelText(int levelNumber)
     {
         levelText.text = "УРОВЕНЬ: " + levelNumber;
     }
     
-    
     public void ShowWinPanel()
     {
         winPanel.SetActive(true);
     }
-
    
     public void HideWinPanel()
     {
@@ -44,7 +41,6 @@ public class ClassicUIManager : MonoBehaviour
     {
         losePanel.SetActive(true);
     }
-
     
     public void HideLosePanel()
     {

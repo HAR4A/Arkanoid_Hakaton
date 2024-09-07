@@ -11,7 +11,7 @@ public class BallController : MonoBehaviour
     public new Rigidbody2D rigidbody { get; private set; }
     
     private float _speed = 600f;
-    private int _lives = 3;
+    private int _lives = 5;
     private int _score;
     private bool _isLocked = true;
 
@@ -61,7 +61,7 @@ public class BallController : MonoBehaviour
                 {
                     LockBall();
                     PaddleController.Instance.LockPaddle();
-                    ClassicUIManager.Instance.ShowLosePanel(); /* logic for lose classic*/
+                    ClassicUIManager.Instance.ShowLosePanel(); 
                 }
             }
         }
@@ -77,7 +77,6 @@ public class BallController : MonoBehaviour
             _score++;
             UpdateScoreText();
             brick.OnHit();
-            
         }
     }
 

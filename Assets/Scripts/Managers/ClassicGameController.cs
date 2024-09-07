@@ -22,7 +22,7 @@ public class ClassicGameController : MonoBehaviour
         }
     }
 
-   
+    // вызывается, когда кирпичи на уровне уничтожены
     public void HandleLevelCompleted()
     {
         ClassicUIManager.Instance.ShowWinPanel();
@@ -33,7 +33,7 @@ public class ClassicGameController : MonoBehaviour
         ClassicUIManager.Instance.ShowLosePanel();
     }
 
-    
+    // переход на следующий уровень
     public void OnNextLevelButtonClicked()
     {
         BallController.Instance.UnlockBall();
@@ -65,7 +65,7 @@ public class ClassicGameController : MonoBehaviour
 
     public void RestartGame()
     {
-        ClassicGameManager.Instance.SaveLevelIndex(ClassicGameManager.Instance.GetCurrentLevelIndex());
+        ClassicGameManager.savedLevelIndex = ClassicGameManager.Instance.GetCurrentLevelIndex();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

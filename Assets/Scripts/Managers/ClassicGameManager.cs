@@ -1,4 +1,3 @@
-using System.IO;
 using UnityEngine;
 
 public class ClassicGameManager : MonoBehaviour
@@ -10,7 +9,6 @@ public class ClassicGameManager : MonoBehaviour
     [SerializeField] private Transform brickParent;
     
     private int currentLevelIndex = 0;
-    private string saveFilePath; 
 
     private void Awake()
     {
@@ -22,10 +20,8 @@ public class ClassicGameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        saveFilePath = Path.Combine(Application.persistentDataPath, "levelData.json");
         
-        currentLevelIndex = LoadLevelIndex();
+        currentLevelIndex = savedLevelIndex;
     }
 
     public void HandleWinCondition()
@@ -52,8 +48,8 @@ public class ClassicGameManager : MonoBehaviour
         currentLevelIndex++;
         if (currentLevelIndex < levels.Length)
         {
-            // сохранение нового уровня
-            SaveLevelIndex(currentLevelIndex);
+            // сохранение нового уровня только на время сессии
+            savedLevelIndex = currentLevelIndex;
             LoadLevel(currentLevelIndex);
         }
         else
@@ -85,31 +81,6 @@ public class ClassicGameManager : MonoBehaviour
         foreach (var brick in bricks)
         {
             Destroy(brick.gameObject);
-        }
-    }
-
-    // сохранение индекса уровня в JSON
-    public void SaveLevelIndex(int levelIndex)
-    {
-        LevelSaveData saveData = new LevelSaveData(levelIndex);
-        string json = JsonUtility.ToJson(saveData);
-        File.WriteAllText(saveFilePath, json);
-        Debug.Log("Level index saved: " + levelIndex);
-    }
-
-    // загрузка индекса уровня из JSON
-    public int LoadLevelIndex()
-    {
-        if (File.Exists(saveFilePath))
-        {
-            string json = File.ReadAllText(saveFilePath);
-            LevelSaveData saveData = JsonUtility.FromJson<LevelSaveData>(json);
-            Debug.Log("Level index loaded: " + saveData.savedLevelIndex);
-            return saveData.savedLevelIndex;
-        }
-        else
-        {
-            return 0; // Если файл не найден, начинаем с 0 уровня
         }
     }
 }

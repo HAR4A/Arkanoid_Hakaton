@@ -637,9 +637,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1720015582}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1720015583}
+        m_TargetAssemblyTypeName: ClassicGameController, Assembly-CSharp
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2325,17 +2325,12 @@ RectTransform:
   m_AnchoredPosition: {x: -1, y: -0.5}
   m_SizeDelta: {x: -3.579956, y: -6.539978}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1720015582 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5237439541027359876, guid: 446e0ca911a531e46ab9a474cb544dc8, type: 3}
-  m_PrefabInstance: {fileID: 3868273974372894480}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1720015583 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4681701192397241241, guid: 446e0ca911a531e46ab9a474cb544dc8, type: 3}
   m_PrefabInstance: {fileID: 3868273974372894480}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720015582}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18535c30f695d8e4caeabacc8212a295, type: 3}

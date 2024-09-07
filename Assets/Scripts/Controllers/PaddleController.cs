@@ -34,7 +34,6 @@ public class PaddleController : MonoBehaviour
     {
         if (_isLocked) return;
         
-        
         float input = Input.GetAxis("Horizontal");
         _movementController.Move(input, Time.deltaTime);
     }
