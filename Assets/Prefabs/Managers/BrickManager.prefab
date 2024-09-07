@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2486084861705649154
+--- !u!1 &1879434962058482623
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2614153199775296682}
-  - component: {fileID: 4460444074036872466}
+  - component: {fileID: 2215227222090207879}
+  - component: {fileID: 5156788745219081388}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: BrickManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2614153199775296682
+--- !u!4 &2215227222090207879
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2486084861705649154}
+  m_GameObject: {fileID: 1879434962058482623}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8319899, y: 1.4727887, z: 1867.8431}
+  m_LocalPosition: {x: -1.6239828, y: 0.39570454, z: 4.849352}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4460444074036872466
+--- !u!114 &5156788745219081388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2486084861705649154}
+  m_GameObject: {fileID: 1879434962058482623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 462a960a36f629944aaa5acd42a9f9c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 875f47c1b15ebbc44bbe8b9e61ca4876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplayUIElements:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  editModeUIElements:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  losePanel: {fileID: 0}
-  winPanel: {fileID: 0}
-  errorPanel: {fileID: 0}

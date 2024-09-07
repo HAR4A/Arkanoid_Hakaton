@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 
     private bool _isEditMode = true;
     
-    public BrickManager brickManager;
+    private BrickManager brickManager;
 
     private void Awake()
     {
