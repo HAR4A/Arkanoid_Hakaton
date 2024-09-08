@@ -117,6 +117,19 @@ public class BallController : MonoBehaviour
         Vector2 _force = new Vector2(Random.Range(-1f, 1f), -1f);
         this.rigidbody.AddForce(_force.normalized * this._speed);
     }
+    
+    public void ResetLives()
+    {
+        _lives = 5;
+        UpdateLivesText();
+    }
+
+    public void ResetScore()
+    {
+        _score = 0;
+        UpdateScoreText();
+    }
+    
 }
 
 

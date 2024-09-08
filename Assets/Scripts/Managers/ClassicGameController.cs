@@ -36,6 +36,9 @@ public class ClassicGameController : MonoBehaviour
     // переход на следующий уровень
     public void OnNextLevelButtonClicked()
     {
+        BallController.Instance.ResetLives();
+        BallController.Instance.ResetScore();
+        
         BallController.Instance.UnlockBall();
         PaddleController.Instance.UnlockPaddle();
 

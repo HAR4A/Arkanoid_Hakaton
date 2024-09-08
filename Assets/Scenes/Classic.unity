@@ -1680,7 +1680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1010717788}
   m_Layer: 0
-  m_Name: parent
+  m_Name: parentPositionForSO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2554,7 +2554,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 112.15
+  m_fontSize: 75.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
