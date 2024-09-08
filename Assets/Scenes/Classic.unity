@@ -2987,10 +2987,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paddle
       objectReference: {fileID: 0}
-    - target: {fileID: 3338887370528405763, guid: cb591510f863f68489ba2dbc8f8ca6e8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7024015966963483311, guid: cb591510f863f68489ba2dbc8f8ca6e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3283,6 +3279,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4951635973063907423, guid: b585f2704902db640a1c5e22cc4e1b12, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506959846400580596, guid: b585f2704902db640a1c5e22cc4e1b12, type: 3}
+      propertyPath: _speed
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 5506959846400580596, guid: b585f2704902db640a1c5e22cc4e1b12, type: 3}
       propertyPath: _livesText
       value: 
@@ -3294,10 +3298,6 @@ PrefabInstance:
     - target: {fileID: 6042725699329506550, guid: b585f2704902db640a1c5e22cc4e1b12, type: 3}
       propertyPath: m_Name
       value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 6042725699329506550, guid: b585f2704902db640a1c5e22cc4e1b12, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

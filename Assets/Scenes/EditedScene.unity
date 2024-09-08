@@ -2082,8 +2082,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 658883772}
   m_HandleRect: {fileID: 658883771}
   m_Direction: 2
-  m_Value: 1.0000015
-  m_Size: 0.69027245
+  m_Value: 1.0000008
+  m_Size: 0.46723512
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3648,7 +3648,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 93.6
+  m_fontSize: 63.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4758,7 +4758,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 97.65
+  m_fontSize: 66.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5761,10 +5761,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1090407936}
     - target: {fileID: 4460444074036872466, guid: e7372e08e3b567846b96deaccc9712e1, type: 3}
-      propertyPath: gameplayUIElements.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4460444074036872466, guid: e7372e08e3b567846b96deaccc9712e1, type: 3}
       propertyPath: editModeUIElements.Array.data[0]
       value: 
       objectReference: {fileID: 1795427010}
@@ -5788,14 +5784,6 @@ PrefabInstance:
       propertyPath: gameplayUIElements.Array.data[1]
       value: 
       objectReference: {fileID: 738957410}
-    - target: {fileID: 4460444074036872466, guid: e7372e08e3b567846b96deaccc9712e1, type: 3}
-      propertyPath: gameplayUIElements.Array.data[2]
-      value: 
-      objectReference: {fileID: 85342786}
-    - target: {fileID: 4460444074036872466, guid: e7372e08e3b567846b96deaccc9712e1, type: 3}
-      propertyPath: gameplayUIElements.Array.data[3]
-      value: 
-      objectReference: {fileID: 556565331}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -47,8 +47,6 @@ MonoBehaviour:
   gameplayUIElements:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   editModeUIElements:
   - {fileID: 0}
   - {fileID: 0}
