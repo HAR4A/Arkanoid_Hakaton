@@ -23,7 +23,7 @@ public class ClassicGameManager : MonoBehaviour
         
         currentLevelIndex = savedLevelIndex;
     }
-
+    
     public void HandleWinCondition()
     {
         BallController.Instance.LockBall();

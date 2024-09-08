@@ -16,7 +16,6 @@ public class BrickController : MonoBehaviour, IBrick
     
     protected virtual void DestroyBrick()
     {
-        
         Destroy(gameObject);
     }  
 }

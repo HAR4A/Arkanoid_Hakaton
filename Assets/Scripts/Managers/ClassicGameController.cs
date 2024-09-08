@@ -21,18 +21,7 @@ public class ClassicGameController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    // вызывается, когда кирпичи на уровне уничтожены
-    public void HandleLevelCompleted()
-    {
-        ClassicUIManager.Instance.ShowWinPanel();
-    }
-
-    public void HandleGameOver()
-    {
-        ClassicUIManager.Instance.ShowLosePanel();
-    }
-
+    
     // переход на следующий уровень
     public void OnNextLevelButtonClicked()
     {

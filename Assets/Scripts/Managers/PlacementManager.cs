@@ -81,9 +81,9 @@ public class PlacementManager : MonoBehaviour
     
         return bounds;
     }
+    
     private void PlacePrefab()
     {
         _currentInstance = null;
     }
-    
 }

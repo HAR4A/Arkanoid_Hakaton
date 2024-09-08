@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 public class BallController : MonoBehaviour
 {
     public static BallController Instance { get; private set; }
+    public new Rigidbody2D rigidbody { get; private set; }
 
     [SerializeField] private TextMeshProUGUI _livesText;
     [SerializeField] private TextMeshProUGUI _scoreText;
-    public new Rigidbody2D rigidbody { get; private set; }
     
     private float _speed = 600f;
     private int _lives = 5;
@@ -38,8 +38,6 @@ public class BallController : MonoBehaviour
         {
             LockBall();
         }
-        
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

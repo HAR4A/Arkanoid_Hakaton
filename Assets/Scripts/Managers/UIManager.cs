@@ -17,14 +17,12 @@ public class UIManager : MonoBehaviour
             Instance = this;
         }
     }
-
-   
+    
     public void ToggleUIForGameplay()  //активирует элементы для игрового процесса и скрывает элементы редактирования
     {
         SetActiveForUIElements(gameplayUIElements, true);
         SetActiveForUIElements(editModeUIElements, false);
     }
-
    
     public void ToggleUIForEditMode() //режим редактирования (если нужно вернуться к редактированию)
     {

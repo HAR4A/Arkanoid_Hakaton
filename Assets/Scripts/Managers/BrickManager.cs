@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class BrickManager : MonoBehaviour
 {
     public static BrickManager Instance { get; private set; }
+    private bool _isSearching = false;
 
     private void Awake()
     {
@@ -16,7 +17,6 @@ public class BrickManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private bool _isSearching = false;
     
     public void CheckForBricksContinuously()
     {

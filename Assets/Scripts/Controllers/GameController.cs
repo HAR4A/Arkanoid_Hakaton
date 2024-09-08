@@ -10,8 +10,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button pauseButton; 
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button startButton;
-
     [SerializeField] private BrickManager brickManager;
+   
     private bool _isPaused = false;
 
     private void Awake()

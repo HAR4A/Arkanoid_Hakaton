@@ -51,6 +51,6 @@ public class WallsController : MonoBehaviour
 
         // дополнительная нижняя стена (триггер)
         bottomTriggerWall.size = new Vector2(_camWidth, _wallThickness);
-        bottomTriggerWall.offset = new Vector2(0f, -_camHeight / 2f - _wallThickness / 2f - _bottomOffset/* - _wallThickness*/); // Немного ниже основной нижней стены
+        bottomTriggerWall.offset = new Vector2(0f, -_camHeight / 2f - _wallThickness / 2f - _bottomOffset);
     }
 }
